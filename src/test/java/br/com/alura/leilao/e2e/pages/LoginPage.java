@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-private WebDriver driver;
+	private WebDriver driver;
 	
 	private static String URL_LOGIN_PAGE = "http://localhost:8080/login";
 

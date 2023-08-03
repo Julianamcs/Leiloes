@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.alura.mvc</groupId>
-	<artifactId>leiloes</artifactId>
+	<artifactId>leilao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>leilao</name>
 	<description>Demo project for Spring Boot</description>

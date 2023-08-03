@@ -10,29 +10,28 @@ import org.junit.jupiter.api.Test;
 
 public class LeilaoTest {
 	
-	
 	@Nested
-    @DisplayName("Dado um lance valido")
-    class UnicoLanceTests {
-
-        Leilao leilao = new Leilao("Macbook Pro 15");
+	@DisplayName("Dado um lance valido")
+	class UnicoLanceTests {
+		
+		Leilao leilao = new Leilao("Macbook Pro 15");
         BigDecimal doisMil = new BigDecimal("2000.0");
 
-        @Nested
-        @DisplayName("Quando propoe o lance")
-        class AssertLanceNormal {
+		@Nested
+		@DisplayName("Quando propoe o lance")
+		class AssertLanceNormal {
+			
+			@Test
+			@DisplayName("Entao o lance eh aceito")
+		    public void deveReceberUmLance() {
+				
+				leilao.propoe(new Lance(new Usuario("Steve Jobs"), doisMil));
 
-            @Test
-            @DisplayName("Entao o lance eh aceito")
-            public void deveReceberUmLance() {
-
-                leilao.propoe(new Lance(new Usuario("Steve Jobs"), doisMil));
-
-                assertEquals(1, leilao.getLances().size());
-                assertEquals(doisMil, leilao.getLances().get(0).getValor());
-            }
-        }
-    }
+		        assertEquals(1, leilao.getLances().size());
+		        assertEquals(doisMil, leilao.getLances().get(0).getValor());
+		    }
+		}
+	}
 	
 	@Test
     public void naoDeveAceitarUmLanceIgualAoAnterior() {
@@ -63,8 +62,6 @@ public class LeilaoTest {
         assertEquals(doisMil, leilao.getLances().get(0).getValor());
     }
 	
-
-	@DisplayName("um leilao pode receber lances de usuários diferentes")
     @Test
     public void deveReceberVariosLances() {
     	
