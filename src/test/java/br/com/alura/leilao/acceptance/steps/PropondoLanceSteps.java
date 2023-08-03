@@ -32,7 +32,6 @@ public class PropondoLanceSteps {
 	public void setup() {
 		this.lista = new ArrayList<Lance>();
 		leilao = new Leilao("Tablet XPTO");
-		System.out.println("before");
 	}
 	
 	@After

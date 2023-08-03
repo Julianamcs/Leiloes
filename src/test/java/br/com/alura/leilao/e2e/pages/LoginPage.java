@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-	private WebDriver driver;
+private WebDriver driver;
 	
 	private static String URL_LOGIN_PAGE = "http://localhost:8080/login";
 
@@ -33,16 +33,6 @@ public class LoginPage {
     public LeiloesPage realizaLoginComoFulano() {
     	return realizaLoginComo("fulano", "pass");
     }
-
-	public boolean estaNaPaginaDeLeiloes() {
-		this.esperaCarregarPaginaDeLeiloes();
-		return this.driver.getCurrentUrl().endsWith("/leiloes");
-	}
-	
-	public void esperaCarregarPaginaDeLeiloes() {
-		WebDriverWait wait = new WebDriverWait(driver,2);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Todos leilões')]")));
-	}
 
 	public boolean estaNaPaginaDeLoginComErro() {
 		System.out.println(this.driver.getCurrentUrl());
