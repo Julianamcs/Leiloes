@@ -15,3 +15,15 @@ XPTO
         E um lance de 15.0 reais do usuario "beltrano" 
 		Quando propoe varios lances ao leilao
 		Entao os lances sao aceitos
+		
+		
+		Esquema do Cenario: Propondo um lance invalidos
+		Dado um lance invalido de <valor> reais e do usuario '<nomeUsuario>'
+		Quando propoe ao leilao
+		Entao o lance não eh aceito
+		
+		Exemplos:
+				| valor | nomeUsuario |
+		    |   0   | beltrano    |
+				|  -1   | cigano      |
+		   
