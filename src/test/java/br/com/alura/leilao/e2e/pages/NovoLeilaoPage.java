@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NovoLeilaoPage {
 
-    private WebDriver driver;
+	private WebDriver driver;
 
     public NovoLeilaoPage(WebDriver driver) {
         this.driver = driver;
@@ -36,5 +36,6 @@ public class NovoLeilaoPage {
         
         return new LeiloesPage(driver);
     }
+
 
 }

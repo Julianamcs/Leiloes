@@ -12,27 +12,25 @@ import io.cucumber.java.pt.Quando;
 public class LoginSteps<usuario> {
 	
 	
-	private Browser browser; 
+	private Browser browser;
 	private LoginPage loginPage;
 	private LeiloesPage leiloesPage;
 	
 	@Dado("o usuario valido")
-	public void usuario_valido() {
+	public void o_usuario_valido() {
 		browser = new Browser();
 		browser.seed();
 		loginPage = browser.getLoginPage();
-		
 	}
-	
+
 	@Quando("realiza login")
 	public void realiza_login() {
 		leiloesPage = this.loginPage.realizaLoginComo("fulano", "pass");
-		
 	}
 	
-	@Entao("eh redirecionado para a pagina de leiloes")
-	public void eh_redirecionado_para_a_pagina_de_leiloes() {
-		Assert.assertTrue(this.leiloesPage.estaNaPaguinaLeiloes());
+	@Entao("é redirecionado para a pagina de leiloes")
+	public void é_redirecionado_para_a_pagina_de_leiloes() {
+		Assert.assertTrue(this.leiloesPage.estaNaPaginaDeLeiloes());
 		browser.clean();
 	}
 	
@@ -43,15 +41,17 @@ public class LoginSteps<usuario> {
 		loginPage = browser.getLoginPage();
 	}
 	
-	@Quando("tenta logar")
-	public void tenta_logar() {
-		leiloesPage = this.loginPage.realizaLoginComo("juana", "1234");
+	@Quando("tenta se logar")
+	public void tenta_se_logar() {
+		this.loginPage.realizaLoginComo("fulano", "xpto");
 	}
 	
-	@Entao("continua na pagina de login")
-	public void continua_na_pagina_de_login() {
+	@Entao("continua na página de login")
+	public void continua_na_página_de_login() {
 		Assert.assertTrue(this.loginPage.estaNaPaginaDeLoginComErro());
 		browser.clean();
 	}
+
+	
 
 }
